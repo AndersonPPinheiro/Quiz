@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.quiz-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#user-section input {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-right: 10px;
+  width: 60%;
+}
+
+button {
+  background-color: #10b981;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #059669;
+}
+
+.hidden {
+  display: none;
+}
+
+#options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.option-btn {
+  background-color: #2563eb;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.option-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.option-btn.selected {
+  background-color: #10b981;
+}
+
+#result-section {
+  text-align: center;
+}
+
+canvas {
+  margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+  .quiz-container {
+    padding: 1.5rem;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  #user-section input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
