@@ -138,19 +138,15 @@ function showQuestion() {
 // SELECIONAR OPÇÃO
 // =====================
 function selectOption(index) {
-  // 1. Remove a classe 'selected' de todos os botões (desmarca o anterior)
   document.querySelectorAll(".option-btn").forEach(btn => {
     btn.classList.remove("selected");
   });
 
-  // 2. Adiciona a classe 'selected' apenas ao botão clicado
   const buttons = document.querySelectorAll(".option-btn");
   buttons[index].classList.add("selected");
 
-  // 3. Salva o índice da opção selecionada
   selectedOptionIndex = index;
 
-  // 4. Habilita o botão de próxima
   nextBtn.disabled = false;
 }
 
@@ -199,20 +195,18 @@ function showResults() {
   renderChart(correctAnswers, wrongAnswers);
 }
 
-// =====================
-// GRÁFICO COM CHART.JS
-// =====================
+// ==========
+// GRÁFICO
+// ==========
 function renderChart(acertos, erros) {
   const chartElement = document.getElementById("resultChart");
   
-  // Destrói o gráfico anterior se existir.
-  // Isso é crucial para evitar bugs de redimensionamento e "infinitos".
   if (Chart.getChart(chartElement)) {
     Chart.getChart(chartElement).destroy();
   }
 
   const ctx = chartElement.getContext("2d");
-  new Chart(ctx, { // Não precisa salvar na propriedade 'chart' se você usar Chart.getChart()
+  new Chart(ctx, {
     type: "pie",
     data: {
       labels: ["Acertos", "Erros"],
@@ -225,12 +219,12 @@ function renderChart(acertos, erros) {
     },
     options: { 
       responsive: true,
-      maintainAspectRatio: false, // Permite que o Flexbox/Wrapper defina o tamanho
+      maintainAspectRatio: false,
       plugins: {
         legend: {
           position: 'top',
           labels: {
-            color: '#fff' // Garante que a legenda seja legível no seu fundo escuro
+            color: '#fff'
           }
         }
       }
