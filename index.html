@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz Interativo</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
-</head>
+  </head>
 <body>
   <div class="quiz-container">
     <h1>Quiz Interativo</h1>
+    <h2>HTML - CSS - JS - PHP</h2>
 
     <div id="user-section">
-      <label for="username">Digite seu nome:</label>
+      <label for="username">Digite seu nome:</label><br>
       <input type="text" id="username" placeholder="Seu nome" />
       <button id="start-btn">Iniciar Quiz</button>
     </div>
@@ -28,12 +28,22 @@
     <div id="result-section" class="hidden">
       <h2>Resultado Final</h2>
       <p id="user-result"></p>
-      <canvas id="resultChart" width="400" height="200"></canvas>
+
+      <div class="chart-wrapper">
+        <canvas id="resultChart"></canvas>
+      </div>
       <button id="restart-btn">Refazer Quiz</button>
     </div>
   </div>
 
+  <footer>
+    <h2>Desenvolvido por</h2>
+    <p>Anderson Pinheiro</p>
+    <p>Charisse Baima</p>
+    <p>Weslen Silva</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
   <script src="script.js"></script>
 </body>
 </html>
-
